@@ -13,4 +13,5 @@
  *= require viewer
  *= require PDFViewerPlugin
  *= require ODFViewerPlugin
+ *= require_tree ./viewerjs_themes
  */
