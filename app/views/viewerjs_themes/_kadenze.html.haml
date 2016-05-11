@@ -1,51 +1,50 @@
-= stylesheet_link_tag 'viewerjs_themes/kadenze', :media => 'all'
+.theme--kadenze
+  #viewer
+    #titlebar
+      #documentName
+      #titlebarRight
+        %button#download.icon-download{:title => "Download"}
+    #toolbarContainer
+      #toolbar
+        #toolbarLeft
 
-#viewer
-  #titlebar
-    #documentName
-    #titlebarRight
-      %button#download.icon-download{:title => "Download"}
-  #toolbarContainer
-    #toolbar
-      #toolbarLeft
+          %button#previous.icon-arrow{:title => "Previous Page"}
 
-        %button#previous.icon-arrow{:title => "Previous Page"}
+          %label#pageNumberLabel.toolbarLabel{:for => "pageNumber"} Page:
+          %input#pageNumber.toolbarField.pageNumber{:type => "number"}/
+          %span#numPages.toolbarLabel
 
-        %label#pageNumberLabel.toolbarLabel{:for => "pageNumber"} Page:
-        %input#pageNumber.toolbarField.pageNumber{:type => "number"}/
-        %span#numPages.toolbarLabel
+          %button#next.icon-arrow{:title => "Next Page"}
 
-        %button#next.icon-arrow{:title => "Next Page"}
+        #toolbarMiddleContainer.outerCenter
+          #toolbarMiddle.innerCenter
 
-      #toolbarMiddleContainer.outerCenter
-        #toolbarMiddle.innerCenter
+            %span#scaleSelectContainer.dropdownToolbarButton
+              %select#scaleSelect{:oncontextmenu => "return false;", :title => "Zoom"}
+                %option#pageAutoOption{:selected => "", :value => "auto"} Automatic
+                %option#pageActualOption{:value => "page-actual"} Actual Size
+                %option#pageWidthOption{:value => "page-width"} Full Width
+                %option#customScaleOption{:value => "custom"}
+                %option{:value => "0.5"} 50%
+                %option{:value => "0.75"} 75%
+                %option{:value => "1"} 100%
+                %option{:value => "1.25"} 125%
+                %option{:value => "1.5"} 150%
+                %option{:value => "2"} 200%
 
-          %span#scaleSelectContainer.dropdownToolbarButton
-            %select#scaleSelect{:oncontextmenu => "return false;", :title => "Zoom"}
-              %option#pageAutoOption{:selected => "", :value => "auto"} Automatic
-              %option#pageActualOption{:value => "page-actual"} Actual Size
-              %option#pageWidthOption{:value => "page-width"} Full Width
-              %option#customScaleOption{:value => "custom"}
-              %option{:value => "0.5"} 50%
-              %option{:value => "0.75"} 75%
-              %option{:value => "1"} 100%
-              %option{:value => "1.25"} 125%
-              %option{:value => "1.5"} 150%
-              %option{:value => "2"} 200%
-
-          #sliderContainer
-            #slider
-      #toolbarRight
-  #canvasContainer
-    #canvas
-  #canvasActions
-    %button#presentation.icon-presentation{:title => "Presentation"}
-    %button#fullscreen.icon-full{:title => "Fullscreen"}
-    %button#zoomOut.icon-minus{:title => "Zoom Out"}
-    %button#zoomIn.icon-plus{:title => "Zoom In"}
-  #overlayNavigator
-    #previousPage
-    #nextPage
-  #overlayCloseButton.icon-plus
-  #dialogOverlay
-  #blanked
+            #sliderContainer
+              #slider
+        #toolbarRight
+    #canvasContainer
+      #canvas
+    #canvasActions
+      %button#presentation.icon-presentation{:title => "Presentation"}
+      %button#fullscreen.icon-full{:title => "Fullscreen"}
+      %button#zoomOut.icon-minus{:title => "Zoom Out"}
+      %button#zoomIn.icon-plus{:title => "Zoom In"}
+    #overlayNavigator
+      #previousPage
+      #nextPage
+    #overlayCloseButton.icon-plus
+    #dialogOverlay
+    #blanked
