@@ -1,0 +1,195 @@
+/* This is just a sample file with CSS rules. You should write your own @font-face declarations
+ * to add support for your desired fonts.
+ */
+
+@font-face {
+  font-family: "kadenze";
+  src: font-url("viewerjs_themes/kadenze.eot");
+  src: font-url("viewerjs_themes/kadenze.eot?#iefix") format("embedded-opentype"),
+       font-url("viewerjs_themes/kadenze.woff") format("woff"),
+       font-url("viewerjs_themes/kadenze.ttf") format("truetype"),
+       font-url("viewerjs_themes/kadenze.svg#kadenze") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "kadenze";
+    src: font-url("viewerjs_themes/kadenze.svg#kadenze") format("svg");
+  }
+}
+
+[data-icon]:before { content: attr(data-icon); }
+
+[data-icon]:before,
+.icon-arrow:before,
+.icon-download:before,
+.icon-full:before,
+.icon-minus:before,
+.icon-plus:before,
+.icon-presentation:before {
+  display: inline-block;
+  font-family: "kadenze";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+.icon-arrow:before { content: "\f100"; }
+.icon-download:before { content: "\f101"; }
+.icon-full:before { content: "\f102"; }
+.icon-minus:before { content: "\f103"; }
+.icon-plus:before { content: "\f104"; }
+.icon-presentation:before { content: "\f105"; }
+
+#titlebar,
+#toolbarContainer {
+    background-image: none;
+    background-color: #2f3739;
+}
+
+#overlayNavigator {
+    display: none;
+}
+
+#overlayCloseButton {
+    transform: rotate(45deg);
+}
+
+#scaleSelectContainer,
+#toolbarRight {
+    display: none !important;
+}
+
+#canvasContainer {
+    background-color: #7f7f7f;
+}
+
+button {
+    background: rgba(0, 0, 0, 0);
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+#canvasActions button {
+    background: #fff;
+    border-radius: 50%;
+    font-size: 1.5em;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+    font-weight: 100;
+    box-shadow: 1px 2px 3px rgba(0,0,0,0.5);
+    vertical-align: middle;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+}
+
+#canvasActions button:hover,
+#canvasActions button:focus {
+    background: #d9d8d8;
+    opacity: 1;
+}
+
+button#presentation {
+  font-size: 2.1em;
+}
+
+#download {
+    color: #fff;
+    margin: 2px 15px 0 2px;
+}
+
+#documentName {
+    margin-left: 15px;
+}
+
+#canvasActions {
+    position: fixed;
+    width: 60px;
+    top: 50%;
+    right: 0;
+    transform: translateY(-60%);
+    z-index: 1;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+}
+
+#toolbar {
+    text-align: center;
+}
+
+#toolbar button {
+    color: #fff;
+    font-size: 15px;
+    border: 1px solid #fff;
+    border-radius: 24px;
+    padding: 1px 3px 2px;
+    width: 25px;
+    height: 25px;
+    margin-top: 3px;
+}
+
+html[dir='ltr'] #toolbarLeft {
+    position: relative;
+    margin-left: 0;
+}
+
+button#next {
+    transform: rotate(-90deg);
+}
+
+button#previous {
+    transform: rotate(90deg);
+}
+
+#toolbar > *,
+.toolbarLabel {
+    display: inline-block;
+}
+
+.toolbarButton:hover,
+.toolbarButton:focus {
+    background: transparent;
+    cursor: poinger;
+    border: none;
+    box-shadow: none;
+}
+
+@media (max-width: 768px) {
+    #titlebar,
+    #toolbarContainer {
+        background-color: rgba(47, 55, 57, 0.8);
+    }
+
+    #canvasActions {
+        top: auto;
+        bottom: 25px;
+        width: 230px;
+        opacity: 0;
+    }
+
+    .viewer-touched #canvasActions {
+        opacity: 1;
+    }
+
+    #canvasActions button {
+        margin: 0 0 0 10px;
+        opacity: 0.5;
+    }
+
+    #overlayNavigator {
+      display: block;
+    }
+}

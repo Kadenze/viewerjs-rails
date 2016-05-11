@@ -483,9 +483,11 @@ function Viewer(viewerPlugin, parameters) {
     function showOverlayNavigator() {
         if (presentationMode || viewerPlugin.isSlideshow()) {
             overlayNavigator.className = 'viewer-touched';
+            viewerElement.className = 'viewer-touched';
             window.clearTimeout(touchTimer);
             touchTimer = window.setTimeout(function () {
                 overlayNavigator.className = '';
+                viewerElement.className = '';
             }, UI_FADE_DURATION);
         }
     }
@@ -496,6 +498,7 @@ function Viewer(viewerPlugin, parameters) {
     function showToolbars() {
         titlebar.classList.add('viewer-touched');
         toolbar.classList.add('viewer-touched');
+        viewerElement.className = 'viewer-touched';
         window.clearTimeout(toolbarTouchTimer);
         toolbarTouchTimer = window.setTimeout(function () {
             hideToolbars();
@@ -505,6 +508,7 @@ function Viewer(viewerPlugin, parameters) {
     function hideToolbars() {
         titlebar.classList.remove('viewer-touched');
         toolbar.classList.remove('viewer-touched');
+        viewerElement.classList.remove('viewer-touched');
     }
 
     function toggleToolbars() {
@@ -576,9 +580,9 @@ function Viewer(viewerPlugin, parameters) {
                 self.showPage(this.value);
             });
 
-            document.getElementById('scaleSelect').addEventListener('change', function () {
-                parseScale(this.value);
-            });
+           // document.getElementById('scaleSelect').addEventListener('change', function () {
+           //     parseScale(this.value);
+           // });
 
             canvasContainer.addEventListener('click', showOverlayNavigator);
             overlayNavigator.addEventListener('click', showOverlayNavigator);
