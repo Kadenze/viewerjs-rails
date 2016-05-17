@@ -103,6 +103,7 @@ $theme-prefix: 'kadenze' !default;
     }
 
     button#presentation {
+      display: none;
       font-size: 2.1em;
     }
 
@@ -119,7 +120,8 @@ $theme-prefix: 'kadenze' !default;
         position: fixed;
         width: 60px;
         top: 50%;
-        right: 0;
+        right: 15px;
+        text-align: right;
         transform: translateY(-60%);
         z-index: 1;
         -webkit-transition: all 0.5s ease-out;

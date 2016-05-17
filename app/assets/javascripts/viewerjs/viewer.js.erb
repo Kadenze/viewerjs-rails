@@ -196,6 +196,8 @@ function Viewer(viewerPlugin, parameters) {
         window.clearTimeout(scaleChangeTimer);
         scaleChangeTimer = window.setTimeout(function () {
             onScroll();
+            showOverlayNavigator();
+            showToolbars();
         }, milliseconds);
     }
 
