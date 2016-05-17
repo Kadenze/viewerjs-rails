@@ -244,7 +244,7 @@ function PDFViewerPlugin() {
 
 
         init(function () {
-            PDFJS.workerSrc = "<%=javascript_url('pdf.worker.js') %>";
+            PDFJS.workerSrc = "<%=javascript_url('viewerjs/pdf.worker.js') %>";
             PDFJS.getDocument(location).then(function loadPDF(doc) {
                 pdfDocument = doc;
                 container = viewContainer;
