@@ -194,6 +194,61 @@ $theme-prefix: 'kadenze' !default;
 
         #overlayNavigator {
           display: block;
+          height: 40px;
+          top: 50%;
+        }
+
+        #previousPage,
+        #nextPage {
+          border: none;
+          background: #fff;
+          border-radius: 50%;
+          width: 40px;
+          height: 40px;
+          position: relative;
+          box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
+          opacity: 0.5;
+          -webkit-transition: all 0.5s ease-out;
+          -moz-transition: all 0.5s ease-out;
+          transition: all 0.5s ease-out;
+
+          &:after {
+            content: '';
+            position: absolute;
+            transform: translate(-50%, -50%);
+          }
+
+          &:hover,
+          &:focus {
+            opacity: 1;
+            cursor: pointer;
+          }
+        }
+
+        #previousPage {
+          float: left;
+          margin-left: 15px;
+
+          &:after {
+            border-top: 10px solid rgba(0, 0, 0, 0);
+            border-bottom: 10px solid rgba(0, 0, 0, 0);
+            border-right: 10px solid #000;
+            left: 44%;
+            top: 50%;
+          }
+        }
+
+        #nextPage {
+          float: right;
+          margin-right: 15px;
+
+          &:after {
+            border-top: 10px solid rgba(0, 0, 0, 0);
+            border-bottom: 10px solid rgba(0, 0, 0, 0);
+            border-left: 10px solid #000;
+            left: 53%;
+            top: 50%;
+          }
         }
     }
 
