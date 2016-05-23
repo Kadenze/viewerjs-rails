@@ -498,13 +498,12 @@ function Viewer(viewerPlugin, parameters) {
 
     /**
      * @param {varName} the name of the of the key you want the value of
-     * @param {varName} the string you would like to search for varName in
+     * @param {queryStr} the string you would like to search for varName in
      */
 
     function parseQueryString(varName, queryStr) {
-        var queryStr = unescape(queryStr) + '&',
-            regex = new RegExp('.*?[&\\?]' + varName + '=(.*?)&.*'),
-            val = queryStr.replace(regex, "$1");
+        var regex = new RegExp('(?:.*?[&\\?]' + varName + '=)(.*?)(?:&.*)'),
+            val = unescape(queryStr.replace(regex, "$1"));
 
         return val == queryStr ? 0 : val;
     };
