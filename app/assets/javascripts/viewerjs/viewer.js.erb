@@ -56,6 +56,7 @@ function Viewer(viewerPlugin, parameters) {
         presentationMode = false,
         isFullScreen = false,
         initialized = false,
+        uiPresented = false,
         url,
         viewerElement = document.getElementById('viewer'),
         canvasContainer = document.getElementById('canvasContainer'),
@@ -197,7 +198,12 @@ function Viewer(viewerPlugin, parameters) {
         scaleChangeTimer = window.setTimeout(function () {
             onScroll();
             showOverlayNavigator();
-            showToolbars();
+
+            if(!uiPresented) {
+              showToolbars();
+            }
+
+            uiPresented = true;
         }, milliseconds);
     }
 
