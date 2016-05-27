@@ -162,7 +162,7 @@
 
     window.onload = function () {
         var viewer,
-            documentUrl = document.location.hash.substring(1),
+            documentUrl = unescape(document.location.hash.substring(1)),
             parameters = parseSearchParameters(document.location),
             Plugin;
 
