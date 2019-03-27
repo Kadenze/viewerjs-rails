@@ -12,7 +12,7 @@ module Viewerjs
         download_enabled: true,
       }.merge(opts)
       
-      render "viewerjs_themes/#{options[:layout]}"
+      render "viewerjs_themes/#{options[:layout]}", download_enabled: options[:download_enabled]
     end
   end
 end
