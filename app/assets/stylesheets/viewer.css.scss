@@ -771,7 +771,7 @@ html[dir='rtl'] .dropdownToolbarButton {
 
 // Mobil adjustments
 
-@media (screen and max-width: 768px) {
+@media screen and (max-width: 768px) {
   #toolbarMiddleContainer, #toolbarLeft {
       visibility: hidden;
   }
