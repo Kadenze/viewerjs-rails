@@ -555,10 +555,12 @@ function Viewer(viewerPlugin, parameters) {
     function setButtonClickHandler(buttonId, handler) {
         var button = document.getElementById(buttonId);
 
-        button.addEventListener('click', function () {
-            handler();
-            button.blur();
-        });
+        if (button) {
+            button.addEventListener('click', function () {
+                handler();
+                button.blur();
+            });
+        }
     }
 
     function init() {
