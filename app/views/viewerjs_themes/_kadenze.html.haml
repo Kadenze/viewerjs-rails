@@ -2,8 +2,9 @@
   #viewer
     #titlebar
       #documentName
-      #titlebarRight
-        %button#download.icon-download{:title => "Download"}
+      - if download_enabled
+        #titlebarRight
+          %button#download.icon-download{:title => "Download"}
     #toolbarContainer
       #toolbar
         #toolbarLeft
