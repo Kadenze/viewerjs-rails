@@ -278,11 +278,14 @@ function Viewer(viewerPlugin, parameters) {
 
         initialScale = readZoomParameter(parameters.zoom);
 
+        const title = parameters.title.replaceAll('+', ' ');
+
         url = parameters.documentUrl;
-        document.title = parameters.title.replaceAll('+', ' ');
+        document.title = title
+
         var documentName = document.getElementById('documentName');
         documentName.innerHTML = "";
-        documentName.appendChild(documentName.ownerDocument.createTextNode(parameters.title));
+        documentName.appendChild(documentName.ownerDocument.createTextNode(title));
 
         viewerPlugin.onLoad = function () {
             document.getElementById('pluginVersion').innerHTML = viewerPlugin.getPluginVersion();
