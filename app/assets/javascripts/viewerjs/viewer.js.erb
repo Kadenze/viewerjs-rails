@@ -279,7 +279,7 @@ function Viewer(viewerPlugin, parameters) {
         initialScale = readZoomParameter(parameters.zoom);
 
         url = parameters.documentUrl;
-        document.title = parameters.title;
+        document.title = parameters.title.gsub('+', ' ');
         var documentName = document.getElementById('documentName');
         documentName.innerHTML = "";
         documentName.appendChild(documentName.ownerDocument.createTextNode(parameters.title));
